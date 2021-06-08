@@ -8,6 +8,7 @@ let cursor = document.getElementById("cursor");
 let fondoNormal=true;
 //cambiar el fondo con el boton:
 let cambiaFondo = document.getElementById("cambiar-fondo");
+let comentarios = document.getElementById("comentarios");
 cambiaFondo.addEventListener("click", () => {
     if(fondoNormal) {
         contenedor.style.background = "url('../img/escenario-debug.png') top center";

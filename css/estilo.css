@@ -5,7 +5,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: start;
     font-family: sans-serif;
 }
 
@@ -18,7 +18,9 @@ body {
     }
 }
 
+
 #contenedor {
+    margin-top: 3em;
     width: 800px;
     height: 450px;
     background: url('../img/escenario.png') top center;
@@ -83,3 +85,4 @@ body {
 #coleccion.activa {
     left: 0;
 }
+
