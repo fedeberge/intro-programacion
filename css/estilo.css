@@ -1,0 +1,85 @@
+body {
+    --offsetAnimacion : -256px;
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: sans-serif;
+}
+
+@keyframes animacion {
+    0%, 100% {
+        background-position-x: var(--offsetAnimacion);
+    }
+    50% {
+        background-position-x: calc(var(--offsetAnimacion) - 64px);
+    }
+}
+
+#contenedor {
+    width: 800px;
+    height: 450px;
+    background: url('../img/escenario.png') top center;
+    background-size: 100%;
+    image-rendering: pixelated;
+    position: relative;
+    overflow: hidden;
+    background-position-y: 0;
+    transition: background-position 0.2s steps(6);
+}
+
+#prota {
+    height: calc(16px*4);
+    width: calc(16px*4);
+    background-image: url('../img/personajePrueba1.png');
+    background-size: 1600%;
+    image-rendering: pixelated;
+    position: relative;
+    background-position-x: 0;
+    animation: animacion 1.5s  steps(1)  infinite;
+    left: 128;
+    top: 256;
+    transition: top 0.25s steps(6), left 0.25s steps(6);
+}
+
+#menu {
+    height: 100%;
+    width: calc(4.5*16*4px);
+    background-image: url('../img/menu.png');
+    background-size: 100%;
+    image-rendering: pixelated;
+    position: absolute;
+    top: 0;
+    right: -50%;
+}
+
+#menu.activo {
+    right:0;
+}
+
+#cursor{
+    height: 32px;
+    width: 32px;
+    background-image: url('../img/cursor.png');
+    background-size: 100%;
+    position: absolute;
+    top: calc(10*32px);
+    left: 32px;
+}
+
+#coleccion {
+    background-image: url('../img/coleccion.png');
+    height: 450px;
+    width: 800px;
+    background-size: cover;
+    image-rendering: pixelated;
+    position: absolute;
+    z-index: 200;
+    left: -800px;
+}
+
+#coleccion.activa {
+    left: 0;
+}
